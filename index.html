@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Langa Multiservices</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #2c2c2c;
+      color: #d2b48c; /* castanho */
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.3rem;
+      font-style: italic;
+      color: #fff;
+    }
+    nav {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #d2b48c;
+    }
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: #2c2c2c;
+      border-bottom: 3px solid #d2b48c;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    /* Sobre Nós */
+    #sobre p {
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+    /* Visão, Objetivo, Missão */
+    .valores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 900px;
+    }
+    .valor-item {
+      flex: 1 1 250px;
+      background: #f7f3ef;
+      border: 2px solid #d2b48c;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .valor-item h3 {
+      color: #8b5e3c;
+      margin-top: 0;
+    }
+    /* Galeria */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+      margin: 2rem 0;
+      transition: background-color 0.3s ease;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe57;
+    }
+    /* Contato e redes sociais */
+    footer {
+      background-color: #2c2c2c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
+    }
+    .redes-sociais {
+      margin: 1rem 0;
+    }
+    .redes-sociais a {
+      color: #d2b48c;
+      margin: 0 0.8rem;
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .redes-sociais a:hover {
+      color: #fff;
+    }
+    /* Responsivo */
+    @media (max-width: 600px) {
+      .valores {
+        flex-direction: column;
+      }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+  <!-- Ícones redes sociais -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papbB8WPEwy5VXUbMdb6i3zjH6H5tWz7btu+q4GZhX7LxLOou1FhCqmuqq4STPUOH3C+0Zm4u+X5U6Gk5V8fXw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+
+<header>
+  <h1>Langa Multiservices</h1>
+  <p>Mobiliário com estilo e elegância</p>
+</header>
+
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#catalogo">Catálogo</a>
+  <a href="#sobre">Sobre Nós</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<main>
+
+  <section id="inicio">
+    <h2>Desde 2023</h2>
+    <p>Bem-vindo à Langa Multiservices, sua melhor escolha em móveis elegantes, funcionais e duradouros para o seu lar ou escritório.</p>
+  </section>
+
+  <section id="catalogo">
+    <h2>Catálogo de Produtos</h2>
+    <div class="galeria" aria-label="Galeria de móveis">
+      <img src="https://i.pinimg.com/564x/c7/24/02/c72402755e0cfc5d2f1fd1c7cd2e4bd3.jpg" alt="Sofá Moderno e Confortável" />
+      <img src="https://i.pinimg.com/564x/f3/3f/d3/f33fd3a91fdb5c2a7d5b32ff65fdc7f3.jpg" alt="Mesa de Escritório com Design Moderno" />
+      <img src="https://i.pinimg.com/564x/03/4e/94/034e94a84639d3452c9c1589f6012ac3.jpg" alt="Cadeiras para Sala de Estar" />
+      <img src="https://i.pinimg.com/564x/0e/c5/8d/0ec58dfd66c3318d10d29232cd9f9b6f.jpg" alt="Mesa de Jantar de Madeira" />
+      <img src="https://i.pinimg.com/564x/d1/fb/67/d1fb67edb6f4b243e6930654f659fc60.jpg" alt="Armário de Quarto Elegante" />
+      <img src="https://i.pinimg.com/564x/f0/2e/60/f02e60919d6a67a3ab79cb34bb31a63c.jpg" alt="Estante de Madeira para Escritório" />
+    </div>
+    <a class="btn-whatsapp" href="https://wa.me/258849085301" target="_blank" rel="noopener noreferrer">
+      Fazer Encomenda via WhatsApp
+    </a>
+  </section>
+
+  <section id="sobre">
+    <h2>Quem Somos</h2>
+    <p>A <strong>Langa Multiservices</strong> é uma empresa moçambicana fundada em 2023, dedicada à comercialização de móveis com alto padrão de qualidade, elegância e funcionalidade.</p>
+    <div class="valores">
+      <div class="valor-item">
+        <h3>Visão</h3>
+        <p>Ser referência nacional em móveis modernos, acessíveis e de alta qualidade, reconhecida pela inovação e atendimento exemplar.</p>
+      </div>
+      <div class="valor-item">
+        <h3>Objetivo</h3>
+        <p>Oferecer soluções práticas e elegantes para mobiliar lares e escritórios, focando em conforto, durabilidade e design contemporâneo.</p>
+      </div>
+      <div class="valor-item">
+        <h3>Missão</h3>
+        <p>Transformar espaços em ambientes acolhedores e funcionais, através de móveis com design moderno e preços justos.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contato">
+  <p>Contato: <a href="tel:+258849085301" style="color:#d2b48c; text-decoration:none;">+258 84 908 5301</a> | <a href="mailto:langamultiservices@gmail.com" style="color:#d2b48c; text-decoration:none;">langamultiservices@gmail.com</a></p>
+
+  <div class="redes-sociais" aria-label="Redes sociais">
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <p style="margin-top: 1rem;">&copy; 2023 - 2025 Langa Multiservices. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
