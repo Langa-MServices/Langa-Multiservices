@@ -188,15 +188,57 @@
     <p>Bem-vindo à Langa Multi-services, sua melhor escolha em móveis elegantes, funcionais e duradouros para o seu lar ou escritório.</p>
   </section>
 
-  <section id="catalogo">
-    <h2>Catálogo de Produtos</h2>
-    <div class="galeria" aria-label="Galeria de móveis">
-      <img src="Sofa Moderno e elegante.jpg"> <alt="Sofá Moderno e Confortável" />
-      <img src="Escritorio.jpg"> <alt="Mesa de Escritório com Design Moderno" />
-      <img src="cadeira sala.jpg"> <alt="Cadeiras para Sala de Estar" />
-      <img src="Mesa.jpg"> <alt="Mesa de Jantar de Madeira" />
-      <img src="Armario.jpg"> <alt="Armário de Quarto Elegante" />
-      <img src="Estante.jpg"> <alt="Estante de Madeira para Escritório" />
+ <section id="catalogo">
+  <h2>Catálogo de Produtos</h2>
+  <div class="galeria" aria-label="Galeria de móveis">
+
+    <div class="produto">
+      <img src="Sofa Moderno e elegante.jpg" alt="Sofá Moderno e Confortável" onclick="mostrarBotao(this, 'Sofá Moderno e Confortável')" />
+    </div>
+
+    <div class="produto">
+      <img src="Escritorio.jpg" alt="Mesa de Escritório com Design Moderno" onclick="mostrarBotao(this, 'Mesa de Escritório com Design Moderno')" />
+    </div>
+
+    <div class="produto">
+      <img src="cadeira sala.jpg" alt="Cadeiras para Sala de Estar" onclick="mostrarBotao(this, 'Cadeiras para Sala de Estar')" />
+    </div>
+
+    <div class="produto">
+      <img src="Mesa.jpg" alt="Mesa de Jantar de Madeira" onclick="mostrarBotao(this, 'Mesa de Jantar de Madeira')" />
+    </div>
+
+    <div class="produto">
+      <img src="Armario.jpg" alt="Armário de Quarto Elegante" onclick="mostrarBotao(this, 'Armário de Quarto Elegante')" />
+    </div>
+
+    <div class="produto">
+      <img src="Estante.jpg" alt="Estante de Madeira para Escritório" onclick="mostrarBotao(this, 'Estante de Madeira para Escritório')" />
+    </div>
+  </div>
+</section>
+
+<!-- Botão flutuante -->
+<div id="botao-encomenda" style="display:none; position:fixed; bottom:20px; right:20px;">
+  <a id="link-whatsapp" target="_blank">
+    <button style="padding: 10px 20px; font-size: 16px; background-color: #25D366; color: white; border: none; border-radius: 8px; cursor: pointer;">
+      Encomendar no WhatsApp
+    </button>
+  </a>
+</div>
+
+<script>
+  function mostrarBotao(elemento, nomeProduto) {
+    const botao = document.getElementById('botao-encomenda');
+    const link = document.getElementById('link-whatsapp');
+    const numero = "258849085301";
+    const mensagem = `Olá, estou interessado no produto: ${nomeProduto}`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    
+    link.href = url;
+    botao.style.display = 'block';
+  }
+</script>
     </div>
     <a class="btn-whatsapp" href="https://wa.me/258849085301" target="_blank" rel="noopener noreferrer">
       Fazer Encomenda via WhatsApp
