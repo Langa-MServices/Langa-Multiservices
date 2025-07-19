@@ -25,14 +25,13 @@
     }
 
     header h1 {
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     header p {
       color: #fff;
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     h2 {
@@ -50,7 +49,7 @@
     }
 
     .galeria img:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     .valor-item {
@@ -98,13 +97,38 @@
     .btn-whatsapp:hover {
       background-color: #1ebe57;
     }
+
+    /* Botão flutuante ajustado para mobile */
+    #botao-encomenda {
+      z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+
+      .carousel-item img {
+        max-height: 250px !important;
+        object-fit: cover;
+      }
+
+      .btn-whatsapp {
+        width: 100%;
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Navbar Mobile Friendly -->
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">☰</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
@@ -129,13 +153,13 @@
   <div id="carouselHeader" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3500">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="Sofa Moderno e elegante.jpg" class="d-block w-100" alt="Sofá" style="max-height: 400px; object-fit: cover;">
+        <img src="Sofa Moderno e elegante.jpg" class="d-block w-100" alt="Sofá">
       </div>
       <div class="carousel-item">
-        <img src="Escritorio.jpg" class="d-block w-100" alt="Escritório" style="max-height: 400px; object-fit: cover;">
+        <img src="Escritorio.jpg" class="d-block w-100" alt="Escritório">
       </div>
       <div class="carousel-item">
-        <img src="Armario.jpg" class="d-block w-100" alt="Armário" style="max-height: 400px; object-fit: cover;">
+        <img src="Armario.jpg" class="d-block w-100" alt="Armário">
       </div>
     </div>
   </div>
@@ -143,7 +167,7 @@
 
 <main class="container my-5">
 
-  <section id="inicio">
+  <section id="inicio" class="text-center">
     <h2>Langa Multi-Services</h2>
     <p>Bem-vindo à Langa Multi-services, sua melhor escolha em móveis elegantes, funcionais e duradouros para o seu lar ou escritório.</p>
   </section>
@@ -151,33 +175,31 @@
   <section id="catalogo">
     <h2>Catálogo de Produtos</h2>
     <div class="row g-4 galeria">
-
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4">
         <img src="Sofa Moderno e elegante.jpg" alt="Sofá Moderno" onclick="mostrarBotao(this, 'Sofá Moderno')" />
       </div>
-      <div class="col-md-4">
-        <img src="Escritorio.jpg" alt="Mesa Escritório" onclick="mostrarBotao(this, 'Mesa de Escritório')" />
+      <div class="col-sm-6 col-md-4">
+        <img src="Escritorio.jpg" alt="Mesa Escritório" onclick="mostrarBotao(this, 'Mesa Escritório')" />
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4">
         <img src="cadeira sala.jpg" alt="Cadeiras Sala" onclick="mostrarBotao(this, 'Cadeiras para Sala')" />
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4">
         <img src="Mesa.jpg" alt="Mesa de Jantar" onclick="mostrarBotao(this, 'Mesa de Jantar')" />
       </div>
-      <div class="col-md-4">
-        <img src="Armario.jpg" alt="Armário" onclick="mostrarBotao(this, 'Armário de Quarto')" />
+      <div class="col-sm-6 col-md-4">
+        <img src="Armario.jpg" alt="Armário" onclick="mostrarBotao(this, 'Armário')" />
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4">
         <img src="Estante.jpg" alt="Estante Escritório" onclick="mostrarBotao(this, 'Estante Escritório')" />
       </div>
-
     </div>
+
     <div class="text-center">
       <a class="btn-whatsapp" href="https://wa.me/258849085301" target="_blank">Fazer Encomenda via WhatsApp</a>
     </div>
   </section>
 
-  <!-- Botão flutuante ao clicar nas imagens -->
   <div id="botao-encomenda" style="display:none; position:fixed; bottom:20px; right:20px;">
     <a id="link-whatsapp" target="_blank">
       <button style="padding: 10px 20px; font-size: 16px; background-color: #25D366; color: white; border: none; border-radius: 8px; cursor: pointer;">
@@ -204,10 +226,8 @@
       </div>
     </div>
   </section>
-
 </main>
 
-<!-- Rodapé -->
 <footer id="contato">
   <p>Contato: 
     <a href="tel:+258849085301" style="color:#d2b48c; text-decoration:none;">+258 84 908 5301</a> | 
@@ -232,7 +252,6 @@
     const numero = "258849085301";
     const mensagem = `Olá, estou interessado no produto: ${nomeProduto}`;
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-    
     link.href = url;
     botao.style.display = 'block';
   }
