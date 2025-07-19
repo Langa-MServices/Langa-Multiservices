@@ -249,52 +249,22 @@
 
 <!-- Scripts -->
 <script>
-  // ✅ 1. Som de boas-vindas após abrir a página
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      const boasVindas = document.getElementById("somBoasVindas");
-      if (boasVindas) {
-        boasVindas.play().catch(() => {}); // Evita erro caso o navegador bloqueie autoplay
-      }
-    }, 1500);
-  });
+  function mostrarBotao(elemento, nomeProduto) {
+    const botao = document.getElementById('botao-encomenda');
+    const link = document.getElementById('link-whatsapp');
+    const numero = "258849085301";
+    const mensagem = `Olá, estou interessado no produto: ${nomeProduto}`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    link.href = url;
+    botao.style.display = 'block';
 
-  // ✅ 2. Som ao fazer scroll
-  let podeTocar = true;
-  window.addEventListener("scroll", () => {
-    if (podeTocar) {
-      const scrollSound = document.getElementById("somScroll");
-      if (scrollSound) scrollSound.play();
-      podeTocar = false;
-      setTimeout(() => { podeTocar = true; }, 1000); // evita tocar muito seguido
+    // Tocar som ao clicar
+    const clickSound = document.getElementById("clickSound");
+    if (clickSound) {
+      clickSound.play();
     }
-  });
-
-  // ✅ 3. Mostrar pontos ou número de imagens no carrossel
-  const imagens = document.querySelectorAll('.carrossel img'); // supondo que tenha .carrossel
-  const indicador = document.createElement('div');
-  indicador.style.textAlign = 'center';
-  indicador.style.marginTop = '0.5rem';
-  indicador.style.fontSize = '1.2rem';
-  indicador.style.color = '#d2b48c';
-  indicador.id = "indicador-carrossel";
-  if (imagens.length > 0) {
-    indicador.innerHTML = `1 / ${imagens.length}`;
-    imagens[0].parentElement.appendChild(indicador);
   }
-
-  let indexAtual = 0;
-  setInterval(() => {
-    if (imagens.length > 0) {
-      imagens.forEach((img, i) => {
-        img.style.display = i === indexAtual ? 'block' : 'none';
-      });
-      document.getElementById("indicador-carrossel").innerHTML = `${indexAtual + 1} / ${imagens.length}`;
-      indexAtual = (indexAtual + 1) % imagens.length;
-    }
-  }, 4000); // troca de imagem a cada 4 segundos
 </script>
-
 
 </body>
 </html>
